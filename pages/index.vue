@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class="flex justify-center items-center">
+    <main>
       <SectionsHomeHero />
     </main>
   </div>
