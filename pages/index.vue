@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div>
-      <p>Home</p>
-    </div>
+    <main class="flex justify-center items-center">
+      <SectionsHomeHero />
+    </main>
   </div>
 </template>
 
