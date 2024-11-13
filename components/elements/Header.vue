@@ -14,7 +14,7 @@
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <NuxtLink v-for="item in navigation" :key="item.id" :to="item.href" class="text-lg font-semibold text-primary font-primary">{{ t(item.name) }}</NuxtLink>
+        <NuxtLink v-for="item in navigation" :key="item.id" :to="item.href" class="text-xl font-semibold text-primary font-primary">{{ t(item.name) }}</NuxtLink>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <ElementsLangSwitcher />
