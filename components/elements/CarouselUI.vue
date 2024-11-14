@@ -1,29 +1,59 @@
-<template>
-  <div class="w-full relative isolate overflow-hidden py-24 sm:py-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-4 grid grid-cols-1 lg:grid-cols-1">
-        <div class="mx-auto max-w-2xl lg:mx-0 bg-bg bg-opacity-50 p-6 shadow-xl">
-          <p class="text-xl font-semibold tracking-tight text-yellow md:text-4xl font-primary text-left md:text-center">{{ t('title1') }}</p>
-          <h1 class="text-6xl font-semibold tracking-tight text-white md:text-9xl font-primary">{{ t('title2') }}<br> <span id="title3">{{ t('title3') }}</span></h1>
-          <p class="mt-8 text-pretty text-base font-medium text-yellow md:text-xl font-primary">{{ t('title4') }}</p>
-          <p class="mt-8 max-w-prose text-pretty text-sm font-medium text-gray-300 md:text-lg font-secondary">{{ t('text1') }}</p>
-          <div class="mx-auto mt-10 max-w-2xl lg:mx-0 md:max-w-none place-self-end self-end text-white">
-            <p>{{ t('foto-right') }} : {{ author }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</template>
-
-<script setup>
+<script setup lang="ts">
 const { t } = useI18n({
   useScope: 'local'
 })
 
-defineProps({
-  author: String
-})
+const items = [
+  { image: '/img/hero/hero1-lg.webp', copyright: '©Joan Vega / Fons Associació Fallaires d\'Andorra la Vella (FAFALV)'},
+  { image: '/img/hero/hero2-lg.webp', copyright: '©Comú d\'Escaldes-Engordany / Arxiu Històric'},
+  { image: '/img/hero/hero3-lg.webp', copyright: '©Comú Sant Julià de Lòria'},
+  { image: '/img/hero/hero4-lg.webp', copyright: '©Arxiu Fallaires d\'Encamp'},
+  { image: '/img/hero/hero5-lg.webp', copyright: '©Guillem Bringué'}
+]
 
+const carouselRef = ref()
+
+onMounted(() => {
+  setInterval(() => {
+    if (!carouselRef.value) return
+
+    if (carouselRef.value.page === carouselRef.value.pages) {
+
+      return carouselRef.value.select(0)
+    }
+
+    carouselRef.value.next()
+  }, 6000)
+})
 </script>
+
+<template>
+  <UCarousel
+    ref="carouselRef"
+    v-slot="{ item, index }"
+    fade
+    :items="items"
+    :ui="{ item: 'basis-full' }"
+    class="rounded-lg overflow-hidden"
+    indicators
+  >
+    <div class="w-full relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+      <img :src="item.image" draggable="false" alt="" class="w-full absolute inset-0 -z-10 size-full object-cover object-bottom md:object-center" />
+      <div class="mx-auto max-w-7xl px-6 lg:px-4 grid grid-cols-1 lg:grid-cols-1">
+        <div class="mx-auto max-w-2xl lg:mx-0 bg-bg bg-opacity-50 p-6 shadow-xl">
+          <p class="text-xl font-semibold tracking-tight text-yellow sm:text-4xl font-primary text-center">{{ t('title1') }}</p>
+          <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-9xl font-primary">{{ t('title2') }}<br> <span id="title3">{{ t('title3') }}</span></h1>
+          <p class="mt-8 text-pretty text-base font-medium text-yellow sm:text-xl font-primary">{{ t('title4') }}</p>
+          <p class="mt-8 text-pretty text-base font-medium text-gray-300 sm:text-lg font-secondary">{{ t('text1') }}</p>
+          <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none place-self-end self-end">
+            <p>{{ t('foto-right') }} : {{ item.copyright }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </UCarousel>
+</template>
 
 <i18n lang="json">
   {
@@ -44,7 +74,7 @@ defineProps({
       "text1" : "En los Valles de Andorra, en sus plazas y en los alrededores de sus pueblos, delante de las puertas de las masías, en la cima de sus montañas [...] Se encienden en esta fiesta grandes hogueras [...] Los chicos hacen lo que denominan fallas que encienden agitándolas y girándolas vertiginosamente, tomando la forma de grandes ruedas de fuego..."
     },
     "fr": {
-      "foto-right": "Foto:",
+      "foto-right": "Photo:",
       "title1" : "Roda el foc!",
       "title2" : "Les Falles",
       "title3" : "d'Andorre",
@@ -53,3 +83,4 @@ defineProps({
     }
   }
 </i18n>
+

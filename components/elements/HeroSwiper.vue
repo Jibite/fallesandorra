@@ -2,9 +2,9 @@
   <swiper
     :spaceBetween="30"
     :effect="'fade'"
-    :navigation="true"
+    :navigation="false"
     :autoplay="{
-      delay: 3000,
+      delay: 4000,
       disableOnInteraction: false,
     }"
     :pagination="{
@@ -12,42 +12,37 @@
     }"
     :loop="true"
     :modules="modules"
-    class="mySwiper h-[800px]"
+    class="mySwiper bg-black"
   >
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero1-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center max-h-screen w-auto" alt=""/>
-        <SectionsHomeHeroText />
-        <div class="h-[800px] flex items-end justify-end"><p class="text-white text-right mb-10 mr-10 bg-black p-1 opacity-80 font-secondary italic">{{t('foto-right')}} ©Joan Vega / Fons Associació Fallaires d'Andorra la Vella (FAFALV)</p></div>
+        <img src="/img/hero/hero1-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-bottom md:object-bottom  w-auto" alt=""/>
+        <SectionsHomeHeroText :author="'©Joan Vega / Fons Associació Fallaires d\'Andorra la Vella (FAFALV)'" />
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero2-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center h-[800px] w-auto" alt="" />
-        <SectionsHomeHeroText />
-        <div class="h-[800px] flex items-end justify-end"><p class="text-white text-right mb-10 mr-10 bg-black p-1 opacity-80 font-secondary italic">{{t('foto-right')}} ©Comú d'Escaldes-Engordany / Arxiu Històric</p></div>
+        <img src="/img/hero/hero2-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-bottom  w-auto" alt="" />
+        <SectionsHomeHeroText :author="'©Comú d\'Escaldes-Engordany / Arxiu Històric'"/>
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero3-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center h-[800px] w-auto" alt=""/>
-        <SectionsHomeHeroText />
-        <div class="h-[800px] flex items-end justify-end"><p class="text-white text-right mb-10 mr-10 bg-black p-1 opacity-80 font-secondary italic">{{t('foto-right')}} ©Comú Sant Julià de Lòria</p></div>
+        <img src="/img/hero/hero3-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-bottom  w-auto" alt=""/>
+        <SectionsHomeHeroText :author="'©Comú Sant Julià de Lòria'"/>
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero4-lg.webp" class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center h-[800px] w-auto" alt="" />
-        <SectionsHomeHeroText />
-        <div class="h-[800px] flex items-end justify-end"><p class="text-white text-right mb-10 mr-10 bg-black p-1 opacity-80 font-secondary italic">{{t('foto-right')}} ©Arxiu Fallaires d'Encamp</p></div>
+        <img src="/img/hero/hero4-lg.webp" class="absolute inset-0 -z-10 size-full object-cover object-bottom  w-auto" alt="" />
+        <SectionsHomeHeroText :author="'©Arxiu Fallaires d\'Encamp'"/>
       </div>
     </swiper-slide>
         
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero5-lg.webp" class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center h-[800px] w-auto" alt=""/>
-        <SectionsHomeHeroText />
-        <div class="h-[800px] flex items-end justify-end"><p class="text-white text-right mb-10 mr-10 bg-black p-1 opacity-80 font-secondary italic">{{t('foto-right')}} ©Guillem Bringué</p></div>
+        <img src="/img/hero/hero5-lg.webp" class="absolute inset-0 -z-10 size-full object-cover object-bottom  w-auto" alt=""/>
+        <SectionsHomeHeroText :author="'©Guillem Bringué'"/>
       </div>
     </swiper-slide>
 
@@ -68,23 +63,10 @@
 
   import { Autoplay, EffectFade, Pagination, Navigation } from 'swiper/modules';
 
-const modules = [Pagination, Navigation, EffectFade, Autoplay]
+  const modules = [Pagination, Navigation, EffectFade, Autoplay]
 
   const { t } = useI18n({
     useScope: 'local'
   })
-</script>
 
-<i18n lang="json">
-  {
-    "ca": {
-      "foto-right": "Foto:"
-    },
-    "es": {
-      "foto-right": "Foto"
-    },
-    "fr": {
-      "foto-right": "Foto"
-    }
-  }
-</i18n>
+</script>

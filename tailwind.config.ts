@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin')
+import type { Config } from 'tailwindcss'
 
-export default {
+export default <Partial<Config>>{
   content: [
     "{srcDir}/components/**/*.{vue,js,jsx,mjs,ts,tsx}",
     "{srcDir}/layouts/**/*.{vue,js,jsx,mjs,ts,tsx}",
@@ -17,7 +17,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#F8F6EC',
+        white: '#F8F6EC',
         primaryOverlay: 'rgba(248, 246, 236, 0.75)',
         secondary: '#42413C',
         secondaryRgb: 'rgb(66, 65, 60)',
@@ -30,31 +30,23 @@ export default {
         orangeRgb: 'rgb(240, 130, 78)',
         grey: '#B2B2B2',
         bg: '#050508',
-        bgSecondary: '#0d2538'
+        bgSecondary: '#0d2538',
+        bgOverlay: 'rgba(5, 5, 8, 0.35)',
       },
       fontFamily: {
         primary: ['Fjalla One', 'sans-serif'],
         secondary: ['Noto Sans', 'sans-serif']
       },
       textShadow: {
-        sm: '0 1px 2px var(--tw-shadow-color)',
-        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
-        lg: '0 4px 8px var(--tw-shadow-color)',
-        lg: '0 8px 16px var(--tw-shadow-color)',
+        sm: '0 1px 2px #050508',
+        DEFAULT: '0 2px 4px #050508',
+        lg: '0 4px 8px #050508',
+        xl: '0 8px 16px #050508',
       },
     },
   },
   plugins: [
-    plugin(function ({ matchUtilities, theme }) {
-      matchUtilities(
-        {
-          'text-shadow': (value) => ({
-            textShadow: value,
-          }),
-        },
-        { values: theme('textShadow') }
-      )
-    }),
+    require("@designbycode/tailwindcss-text-shadow"),
   ],
 }
 

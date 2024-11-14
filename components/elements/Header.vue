@@ -8,13 +8,13 @@
         </a>
       </div>
       <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-primary" @click="mobileMenuOpen = true">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white" @click="mobileMenuOpen = true">
           <span class="sr-only">Open main menu</span>
           <Bars3Icon class="size-10" aria-hidden="true" />
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <NuxtLink v-for="item in navigation" :key="item.id" :to="item.href" class="text-xl font-semibold text-primary font-primary">{{ t(item.name) }}</NuxtLink>
+        <NuxtLink v-for="item in navigation" :key="item.id" :to="item.href" class="text-xl font-semibold text-white font-primary">{{ t(item.name) }}...</NuxtLink>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <ElementsLangSwitcher />
@@ -28,7 +28,7 @@
             <span class="sr-only">Falles d'Andorra</span>
             <img src="/img/logo_h.png" alt="" class="h-20" />
           </a>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-primary" @click="mobileMenuOpen = false">
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-white" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="size-10" aria-hidden="true" />
           </button>
@@ -36,7 +36,7 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <NuxtLink v-for="item in navigation" :key="item.id" :to="item.href" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-primary font-bold text-primary hover:bg-yellow text-center">{{ t(item.name) }}</NuxtLink>
+              <NuxtLink v-for="item in navigation" :key="item.id" :to="item.href" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-primary font-bold text-white hover:bg-yellow text-center">{{ t(item.name) }}</NuxtLink>
             </div>
             <div class="py-6">
               <ElementsLangSwitcher />

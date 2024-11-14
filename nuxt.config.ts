@@ -22,8 +22,8 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
-
+  modules: ['@nuxtjs/i18n', '@nuxt/ui'],
+  
   i18n: {
     locales: [
       {
