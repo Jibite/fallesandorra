@@ -12,29 +12,29 @@
     }"
     :loop="true"
     :modules="modules"
-    class="mySwiper bg-black"
+    class="swiper bg-black"
   >
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero1-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-bottom md:object-bottom  w-auto" alt=""/>
+        <img src="/img/hero/hero1-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-center  w-auto" alt=""/>
         <SectionsHomeHeroText :author="'©Joan Vega / Fons Associació Fallaires d\'Andorra la Vella (FAFALV)'" />
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero2-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-bottom  w-auto" alt="" />
+        <img src="/img/hero/hero2-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-center  w-auto" alt="" />
         <SectionsHomeHeroText :author="'©Comú d\'Escaldes-Engordany / Arxiu Històric'"/>
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero3-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-bottom  w-auto" alt=""/>
+        <img src="/img/hero/hero3-lg.webp"  class="absolute inset-0 -z-10 size-full object-cover object-center  w-auto" alt=""/>
         <SectionsHomeHeroText :author="'©Comú Sant Julià de Lòria'"/>
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="relative">
-        <img src="/img/hero/hero4-lg.webp" class="absolute inset-0 -z-10 size-full object-cover object-bottom  w-auto" alt="" />
+        <img src="/img/hero/hero4-lg.webp" class="absolute inset-0 -z-10 size-full object-cover object-center  w-auto" alt="" />
         <SectionsHomeHeroText :author="'©Arxiu Fallaires d\'Encamp'"/>
       </div>
     </swiper-slide>

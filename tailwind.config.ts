@@ -17,7 +17,7 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       colors: {
-        white: '#F8F6EC',
+        primary: '#F8F6EC',
         primaryOverlay: 'rgba(248, 246, 236, 0.75)',
         secondary: '#42413C',
         secondaryRgb: 'rgb(66, 65, 60)',

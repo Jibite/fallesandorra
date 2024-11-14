@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full relative isolate overflow-hidden py-24 sm:py-32">
+  <div class="w-full relative isolate overflow-hidden pt-64 xl:pt-24 pb-6">
       <div class="mx-auto max-w-7xl px-6 lg:px-4 grid grid-cols-1 lg:grid-cols-1">
         <div class="mx-auto max-w-2xl lg:mx-0 bg-bg bg-opacity-50 p-6 shadow-xl">
-          <p class="text-xl font-semibold tracking-tight text-yellow md:text-4xl font-primary text-left md:text-center">{{ t('title1') }}</p>
-          <h1 class="text-6xl font-semibold tracking-tight text-white md:text-9xl font-primary">{{ t('title2') }}<br> <span id="title3">{{ t('title3') }}</span></h1>
-          <p class="mt-8 text-pretty text-base font-medium text-yellow md:text-xl font-primary">{{ t('title4') }}</p>
-          <p class="mt-8 max-w-prose text-pretty text-sm font-medium text-gray-300 md:text-lg font-secondary">{{ t('text1') }}</p>
+          <p class="text-xl font-semibold tracking-tight text-yellow md:text-2xl font-primary text-left ml-32">{{ t('title1') }}</p>
+          <h1 class="text-4xl font-semibold tracking-tight text-white md:text-7xl font-primary">{{ t('title2') }}<br> <span id="title3">{{ t('title3') }}</span></h1>
+          <p class="mt-8 text-pretty text-base font-medium text-yellow md:text-base font-primary">{{ t('title4') }}</p>
+          <p class="mt-2 max-w-[400px] text-pretty text-sm font-medium text-gray-300 md:text-base font-secondary">{{ t('text1') }}</p>
           <div class="mx-auto mt-10 max-w-2xl lg:mx-0 md:max-w-none place-self-end self-end text-white">
             <p>{{ t('foto-right') }} : {{ author }}</p>
           </div>
