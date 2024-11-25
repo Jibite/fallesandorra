@@ -2,6 +2,8 @@
   <div>
     <main>
       <SectionsHomeHero />
+      <SectionsHomeLaCremada />
+      <SectionsHomeElements />
     </main>
   </div>
 </template>
