@@ -1,6 +1,7 @@
 <template>
   <div>
     <SectionsFallaMaterials />
+    <SectionsFallaPaper />
   </div>
 </template>
 

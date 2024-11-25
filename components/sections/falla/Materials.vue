@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-green min-h-screen md:grid md:grid-cols-2 lg:grid-cols-3">
+  <div class="relative bg-green md:grid md:grid-cols-2 lg:grid-cols-3">
     <img src="/img/lafalla/back-ft.jpg" alt="Fer falla" class="absolute opacity-60 w-full h-full object-cover"/>
     <div class="mx-auto relative px-12 py-24 md:col-span-2">
       <div class="text-primary">
