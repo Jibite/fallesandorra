@@ -2,6 +2,7 @@
   <div>
     <SectionsFallaireSer />
     <SectionsFallaireCapa />
+    <SectionsFallaireLlum />
   </div>
 </template>
 
