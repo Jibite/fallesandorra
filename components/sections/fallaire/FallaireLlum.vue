@@ -1,22 +1,21 @@
 <template>
     <div class="relative min-h-screen bg-bg flex justify-end">
-        <img src="/img/fallaire/back_llum.jpg" alt="Fer falla" class="hidden lg:block absolute opacity-60 w-full h-full object-cover object-center"/>
-        <img src="/img/fallaire/back_llum.jpg" alt="Fer falla" class="absolute lg:hidden opacity-60 w-full h-auto object-cover object-top"/>
-        <div class="mx-auto relative p-12 grid grid-cols-2">
-            <div class="p-24">
+        <img src="/img/fallaire/back_llum.jpg" alt="Fer falla" class="absolute opacity-60 w-full h-full object-cover object-center"/>
+        <div class="mx-auto relative p-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="md:mt-24 lg:p-24 col-span-2 lg:col-span-1">
                 <img src="/img/fallaire/llum01.jpg" alt="">
                 <p class="text-sm text-white font-secondary">{{t('foto-right')}} ©Comú d'Escaldes-Engordany / Arxiu Històric</p>
             </div>
-            <div class="text-white relative flex flex-col justify-center items-start pl-12 lg:pl-32 py-24 mt-64 lg:mt-0 bg-black bg-opacity-50">
+            <div class="text-white relative flex flex-col justify-center items-start p-6 lg:pl-32 py-24 mt-0 bg-black bg-opacity-50 col-span-2 lg:col-span-1">
                 <h1 class="text-6xl font-primary">{{ t('llum.title1') }}</h1>
                 <p class="font-secondary text-base mt-4 max-w-sm lg:max-w-md tracking-wide">{{ t('llum.text1') }}</p>
                 <p class="font-secondary text-base mt-4 max-w-sm lg:max-w-md tracking-wide">{{ t('llum.text2') }}</p>
             </div>
-            <div class="pr-12 py-24 -mt-24">
+            <div class="lg:pr-12 lg:py-24 lg:-mt-24">
                 <img src="/img/fallaire/llum02.jpg" alt="">
                 <p class="text-sm text-white font-secondary">{{t('foto-right')}} ©Comú Sant Julià de Lòria</p>
             </div>
-            <div class="pl-6 lg:pl-12 py-24">
+            <div class="md:pl-6 lg:pl-12 py-6 lg:py-24">
                 <img src="/img/fallaire/llum03.jpg" alt="">
                 <p class="text-sm text-white font-secondary">{{t('foto-right')}} ©Qucut Producció Audiovisual / Fons Associació Fallaires d'Andorra la Vella (FAFALV)</p>
             </div>
