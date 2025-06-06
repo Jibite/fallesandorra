@@ -1,4 +1,4 @@
-const _rlinks = [
+export const _rlinks = [
   {
     id: 1,
     title: "El nostre patrimoni mundial: les Falles de Sant Joan. Les Festes del foc del solstici d’estiu als Pirineus.",
