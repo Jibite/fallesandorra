@@ -42,7 +42,8 @@
               <h3 class="text-xl font-semibold text-white uppercase font-primary">{{ t('links') }}</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li v-for="item in navigation.links" :key="item.name">
-                  <a :href="item.href" class="text-base text-gray-200 hover:text-white">{{ t(item.name) }}</a>
+                  <a v-if="!isButton" :href="item.href" :target="item.target" class="text-base text-gray-200 hover:text-white">{{ t(item.name) }}</a>
+                  <button v-if="isButton" @click="showCredits">{{ t(item.name) }}</button>
                 </li>
               </ul>
             </div>
@@ -59,6 +60,7 @@
         <p class="mt-8 text-base text-gray-200 md:order-1 md:mt-0 font-secondary">&copy; 2020-{{ actualYear }} Govern d'Andorra, {{ t('rights') }}</p>
       </div>
     </div>
+    <ElementsCredits v-if="showingCredits" @close="showCredits"/>
   </footer>
 </template>
 <script setup>
@@ -69,6 +71,12 @@ const { t } = useI18n({
 })
 
 const actualYear = new Date().getFullYear()
+
+const showingCredits = ref(true)
+
+const showCredits = () => {
+  showingCredits.value = !showingCredits.value
+}
 
 const navigation = {
   menu: [
@@ -104,10 +112,10 @@ const navigation = {
     }
   ],
   links: [
-    { name: 'mce', href: '#' },
-    { name: 'dpa', href: '#' },
-    { name: 'credits', href: '#' },
-    { name: 'conditions', href: '#' },
+    { name: 'mce', href: 'https://www.govern.ad/ca/tematiques/cultura-i-esports', target: '_blank', isButton: false },
+    { name: 'dpa', href: 'https://www.govern.ad/ca/tematiques/cultura-i-esports/patrimoni-cultural', target: '_blank', isButton: false },
+    { name: 'credits', href: '/', target: '_self', isButton: true },
+    { name: 'conditions', href: '/politica-privacitat', target: '_self', isButton: false },
   ],
   company: [
     { name: 'About', href: '#' },
@@ -117,7 +125,7 @@ const navigation = {
   ],
   legal: [
     { name: 'Terms of service', href: '#' },
-    { name: 'Privacy policy', href: '#' },
+    { name: 'Privacy policy', href: '/politica-privacitat' },
     { name: 'License', href: '#' },
   ],
   social: [

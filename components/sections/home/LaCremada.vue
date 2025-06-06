@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-[1320px] min-h-[600px] mx-auto relative py-12">
     <img src="/img/features/back-01_2.webp" alt="La Cremada de falles" class="absolute w-full opacity-30 object-cover">
-    <div class="grid grid-cols-2 items-center content-start place-content-between absolute">
-      <div class="max-w-prose">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center content-start place-content-between absolute">
+      <div class="max-w-prose px-12">
         <h2 class="text-white text-5xl font-primary">{{ t('features.title1') }}</h2>
         <p class="mt-4 text-base font-secondary text-white tracking-wide">{{ t('features.text1') }}</p>
         <p class="mt-4 text-base font-secondary text-white tracking-wide">{{ t('features.text2') }}</p>
@@ -19,7 +19,7 @@
           </div>
         </blockquote>
       </div>
-      <img :src="`../img/features/words_${t('features.words')}.png`" alt="El significat de les falles" class="place-self-end">
+      <img :src="`../img/features/words_${t('features.words')}.png`" alt="El significat de les falles" class="place-self-end hidden lg:block">
     </div>
   </div>
 </template>

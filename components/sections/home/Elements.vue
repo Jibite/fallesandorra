@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-12 mx-auto flex gap-10 justify-center items-center">
+  <div class="mt-64 md:mt-32 lg:mt-12 mx-auto flex flex-col md:flex-row gap-10 justify-center items-center">
     <NuxtLink to="/la-falla" class="relative isolate overflow-hidden bg-yellow pt-8 pb-36 w-80 rounded-lg">
       <img src="/img/features/element1.jpg" alt="Fer falla" class="absolute opacity-80 inset-0 -z-10 size-full object-cover object-right md:object-center" />
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
