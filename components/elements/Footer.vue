@@ -42,8 +42,8 @@
               <h3 class="text-xl font-semibold text-white uppercase font-primary">{{ t('links') }}</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li v-for="item in navigation.links" :key="item.name">
-                  <a v-if="!isButton" :href="item.href" :target="item.target" class="text-base text-gray-200 hover:text-white">{{ t(item.name) }}</a>
-                  <button v-if="isButton" @click="showCredits">{{ t(item.name) }}</button>
+                  <a v-if="!item.isButton" :href="item.href" :target="item.target" class="text-base text-gray-200 hover:text-white">{{ t(item.name) }}</a>
+                  <button v-if="item.isButton" @click="showCredits" class="text-base text-gray-200 hover:text-white">{{ t(item.name) }}</button>
                 </li>
               </ul>
             </div>
@@ -72,7 +72,7 @@ const { t } = useI18n({
 
 const actualYear = new Date().getFullYear()
 
-const showingCredits = ref(true)
+const showingCredits = ref(false)
 
 const showCredits = () => {
   showingCredits.value = !showingCredits.value
