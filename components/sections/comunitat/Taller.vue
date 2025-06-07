@@ -1,6 +1,6 @@
 <template>
     <div class="h-screen bg-bg">
-    <img src="/img/comunitat/taller2.JPG" alt="Fer falla" class="absolute opacity-50 w-full h-full object-cover object-center"/>
+    <img src="/img/comunitat/taller2.jpg" alt="Fer falla" class="absolute opacity-50 w-full h-full object-cover object-center"/>
     <div class="relative h-full flex flex-col justify-end py-24 px-6 gap-6">
         <div class="text-white">
             <h2 class="text-5xl font-primary">{{ t('taller.title1') }}</h2>
