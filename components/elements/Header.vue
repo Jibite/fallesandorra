@@ -36,7 +36,7 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <NuxtLink v-for="item in navigation" :key="item.id" :to="item.href" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-primary font-bold text-primary hover:bg-yellow text-center">{{ t(item.name) }}</NuxtLink>
+              <NuxtLink v-for="item in navigation" :key="item.id" :to="item.href" @click="mobileMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-primary font-bold text-primary hover:bg-yellow text-center">{{ t(item.name) }}</NuxtLink>
             </div>
             <div class="py-6">
               <ElementsLangSwitcher />
