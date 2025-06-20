@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@dargmuesli/nuxt-cookie-control'],
   
   i18n: {
+    defaultLocale: 'ca',
     locales: [
       {
         code: 'ca',

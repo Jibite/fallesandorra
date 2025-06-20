@@ -77,7 +77,7 @@ const parroquies = [
     name: "Sant Julià de Lòria",
     date: "23 de juny",
     place: "Del Barri Rocacorba i de la plaça Francesc Cairat fins a la Plaça de la Germandat",
-    start: "22:30. Barri Rocacorba",
+    start: "22:30. Barri Rocacorba i Plaça Francesc Cairat",
     start_link: "",
     social: {
       face: { enabled: true, link: "https://www.facebook.com/fallaireslauredians/"},
@@ -102,7 +102,7 @@ const parroquies = [
     name: "Escaldes-Engordany",
     date: "23 de juny",
     place: "Del Camí de la Peletera fins a la Creu Blanca | De la Plaça de l'Església fins l'Aparcament del Veedors (Av. Carlemany).",
-    start: "22:00. Cas antic d'Escaldes-Engordany",
+    start: "22:00. Casc antic d'Escaldes-Engordany",
     start_link: "",
     social: {
       face: { enabled: false, link: ""},
@@ -151,7 +151,7 @@ const parroquies = [
     name: "Canillo",
     date: "23 de juny",
     place: "De la plaça de Sant Serni fins al Prat del Pi",
-    start: "21h. a la plaça de Sant Serni",
+    start: "21h. Plaça de Sant Serni",
     start_link: "",
     social: {
       face: { enabled: true, link: "https://www.facebook.com/PuntJoveCanillo/"},
@@ -198,8 +198,8 @@ const parroquies = [
     id: 7,
     name: "Encamp",
     date: "23 de juny",
-    place: "Lloc per determinar",
-    start: "Horaris per determinar",
+    place: "Aparcament del Prat de l’Areny",
+    start: "22:30",
     start_link: "",
     social: {
       face: { enabled: false, link: "" },
