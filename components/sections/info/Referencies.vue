@@ -46,7 +46,7 @@ const links = [
     title: "Las fallas de Andorra, Patrimoni de la humanidad de la UNESCO.",
     author: "National Geographic | Creative Works",
     info: "Andorra Turisme, 2025",
-    link: "https://www.nationalgeographic.es/contenido-ofrecido-andorra-al-natural-patrimonio-de-la-humanidad/fallas-de-andorra"
+    link: "https://www.natgeotv.com/es/especial/fallas-de-andorra"
   }
 ]
 
