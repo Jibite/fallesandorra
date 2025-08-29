@@ -7,7 +7,7 @@
       <template v-slot:bar>
         <h3>{{t('cookies.barTitle')}}</h3>
         <p>{{t('cookies.barDescription')}}</p>
-        <a href="/policy" target="_blank" class="policy-link">{{t('cookies.details')}}</a>
+        <a href="/" target="_blank" class="policy-link">{{t('cookies.details')}}</a>
       </template>
       <template v-slot:modal>
         <h3>{{ t('cookies.manageCookies') }}</h3>

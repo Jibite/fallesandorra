@@ -1,10 +1,10 @@
 <template>
   <div class="relative min-h-screen lg:h-screen lg:min-h-0 bg-white">
     <img src="/img/comunitat/actes6.jpg" alt="Fer falla" class="absolute opacity-20 w-full h-full object-cover object-center"/>
-    <div class="relative grid grid-cols-1 lg:grid-cols-2 py-12 px-40">
+    <div class="relative grid grid-cols-1 lg:grid-cols-2 py-12 px-4 lg:px-40">
       <div>
         <div>
-          <img class="h-96 w-auto" src="/img/comunitat/colectius-image1.jpg" alt="Colectius fallaires">
+          <img class="lg:h-96 w-auto" src="/img/comunitat/colectius-image1.jpg" alt="Colectius fallaires">
           <p class="text-secondary text-sm font-secondary">Foto: ©Oriol Llauradó</p>
         </div>
         <div class="mt-4"><h2 class="text-2xl font-secondary text-secondary font-bold">{{ t('colectius.title1') }}</h2></div>
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div>
-        <div class="p-12">
+        <div class="px-4 py-12 lg:p-12">
           <h2 class="text-right text-2xl font-secondary text-secondary font-bold">{{ t('colectius.title2') }}</h2>
           <p class="text-right text-secondary font-secondary text-lg leading-6">{{ t('colectius.title3') }}</p>
           <SectionsComunitatMap />

@@ -1,7 +1,8 @@
 <template>
     <div class="min-h-screen bg-bg flex items-end justify-between">
         <img src="/img/comunitat/actes5.webp" alt="Fer falla" class="absolute opacity-90 w-full h-full object-cover object-center"/>
-        <div class="relative lg:w-4/12 bg-bg -mb-96 lg:mb-0">
+        
+        <div class="relative lg:w-5/12 2xl:w-4/12 bg-bg -mb-96 lg:mb-0">
             <img src="/img/comunitat/actes4.jpeg" alt="Fer falla" class="absolute opacity-40 w-full h-full object-cover object-bottom"/>
             <div class="relative py-24 pl-12 pr-24 text-white">
                 <h2 class="font-primary text-4xl">{{ t('actes.title1') }}</h2>
@@ -11,6 +12,7 @@
                 <p class="text-sm mt-2">Foto: © Comú d'Andorra la Vella / Tony Lara</p>
             </div>
         </div>
+        
         <div class="relative p-12 hidden lg:block">
             <img src="/img/comunitat/actes6.jpg" alt="" class="h-96 w-auto">
         </div>

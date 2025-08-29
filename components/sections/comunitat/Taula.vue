@@ -1,6 +1,6 @@
 <template>
     <div class="relative min-h-screen bg-bg grid grid-cols-1 lg:grid-cols-2">
-        <div class="text-primary flex flex-col items-start justify-center p-24">
+        <div class="text-primary flex flex-col items-start justify-center p-12 lg:p-24">
             <div class="">
                 <h1 class="text-6xl font-primary">{{ t('tnacional.title1') }}</h1>
             </div>

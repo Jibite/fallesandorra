@@ -2,11 +2,11 @@
     <div class="relative min-h-screen bg-bg flex justify-center">
     <img src="/img/comunitat/activitats3.JPG" alt="Fer falla" class="absolute opacity-90 w-full h-full object-cover object-center"/>
     <div class="mx-auto relative flex flex-col items-between justify-between py-24">
-        <div class="p-12 w-screen text-right place-self-end text-white flex flex-col items-end">
+        <div class="p-6 lg:p-12 w-screen text-right place-self-end text-white flex flex-col items-end">
             <h2 class="font-primary text-4xl">{{ t('activities.title1') }}</h2>
             <p class="font-secondary leading-6 tracking-wider text-base max-w-md">{{ t('activities.text1') }}</p>
         </div>
-        <div class="p-12 text-white flex flex-col gap-12">
+        <div class="p-6 lg:p-12 text-white flex flex-col gap-12">
             <div class="p-12 lg:w-4/12 flex flex-col items-start bg-greenOverlay">
                 <h2 class="font-primary text-5xl">{{ t('argolla.title1') }}</h2>
                 <p class="mt-4 font-secondary leading-6 tracking-wider text-base max-w-xl">{{ t('argolla.text1') }}</p>

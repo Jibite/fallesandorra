@@ -1,13 +1,13 @@
 <template>
     <div class="h-screen bg-bg">
-    <img src="/img/comunitat/taller2.jpg" alt="Fer falla" class="absolute opacity-50 w-full h-full object-cover object-center"/>
-    <div class="relative h-full flex flex-col justify-end py-24 px-6 gap-6">
+    <img src="/img/comunitat/taller2.jpg" alt="Fer falla" class="absolute opacity-50 w-full h-full object-cover object-[-600px] md:object-center"/>
+    <div class="relative h-full flex flex-col justify-end pt-20 lg:py-24 px-6 gap-6">
         <div class="text-white">
             <h2 class="text-5xl font-primary">{{ t('taller.title1') }}</h2>
-            <p class="mt-4 w-6/12 font-secondary leading-6 tracking-wider text-lg">{{ t('taller.text1') }}</p>
+            <p class="mt-4 lg:w-6/12 font-secondary leading-6 tracking-wider text-lg">{{ t('taller.text1') }}</p>
             <p class="mt-2 text-white text-sm">Foto: © Oriol Llauradó</p>
         </div>
-        <div class="w-8/12 grid grid-cols-3 gap-4">
+        <div class="lg:w-8/12 grid grid-cols-2 lg:grid-cols-3 gap-4">
             <img src="/img/comunitat/taller1.jpg" alt="">
             <img src="/img/comunitat/taller3.jpg" alt="">
             <img src="/img/comunitat/taller4.jpg" alt="">
