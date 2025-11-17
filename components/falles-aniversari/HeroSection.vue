@@ -15,7 +15,7 @@
       <!-- Logo UNESCO o badge -->
       <div class="mb-8 animate-fade-in">
         <div class="inline-block px-6 py-2">
-          <img src="/img/logo_.png" alt="Logo Fallaires Valls d'Andorra" class="h-12 md:h-16 lg:h-48 mx-auto" />
+          <img src="/img/unesco.webp" alt="Logo Fallaires Valls d'Andorra" class="max-w-xl mx-auto" />
         </div>
       </div>
 
