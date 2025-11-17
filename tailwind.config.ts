@@ -32,6 +32,13 @@ export default <Partial<Config>>{
         bg: '#050508',
         bgSecondary: '#0d2538',
         bgOverlay: 'rgba(5, 5, 8, 0.35)',
+        // Colores del fuego para la página del aniversario UNESCO
+        'fire-orange': '#FF6B35',
+        'fire-red': '#D32F2F',
+        'fire-yellow': '#FFA726',
+        'fire-gold': '#FFB300',
+        'dark-bg': '#0A0A0A',
+        'dark-secondary': '#1A1A1A',
       },
       fontFamily: {
         primary: ['Fjalla One', 'sans-serif'],
