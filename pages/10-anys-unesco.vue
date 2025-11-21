@@ -3,13 +3,13 @@
     <!-- Hero Section -->
     <FallesAniversariHeroSection />
 
+    <!-- About Section -->
+    <FallesAniversariAboutFallesSection />
+
     <!-- Coming Soon Section - Pàgina temporal per generar expectació -->
     <FallesAniversariComingSoon />
 
     <!-- SECCIONS TEMPORALMENT OCULTES - Descomentar quan es vulgui publicar tota la informació -->
-
-    <!-- About Section -->
-    <!-- <FallesAniversariAboutFallesSection /> -->
 
     <!-- Program Schedule Section -->
     <!-- <FallesAniversariProgramSchedule /> -->
@@ -46,7 +46,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Estem preparant una celebració històrica! 29-30 novembre 2025: commemorem una dècada de les Falles del Pirineu com a Patrimoni de la Humanitat. Properament revelartem el programa complet.'
+      content: '29-30 novembre 2025: commemorem una dècada de les Falles del Pirineu com a Patrimoni Cultural Immaterial de la Humanitat. Properament revelarem el programa complet.'
     },
     {
       name: 'keywords',
@@ -59,7 +59,7 @@ useHead({
     },
     {
       property: 'og:description',
-      content: '🔥 Una dècada mantenint viva la flama del nostre patrimoni. 29-30 novembre 2025. Properament: programa complet, tallers, conferències i l\'encesa simbòlica més esperada!'
+      content: '🔥 Una dècada mantenint viva la flama del nostre patrimoni. 29-30 novembre 2025. Celebrem-ho junts!'
     },
     {
       property: 'og:type',
@@ -76,7 +76,7 @@ useHead({
     },
     {
       name: 'twitter:description',
-      content: 'La flama s\'està encenent... 29-30 novembre 2025. No et perdis la celebració!'
+      content: '29-30 novembre 2025. No et perdis la celebració!'
     }
   ],
   htmlAttrs: {
