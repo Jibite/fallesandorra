@@ -12,78 +12,83 @@
         </p>
       </div>
 
-      <!-- Organizadores principales -->
+      <!-- Sección: Organitza -->
+      <div class="mb-24">
+        <h3 class="text-center text-fire-yellow font-primary text-2xl md:text-3xl mb-8">
+          Organitza
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 xl:max-w-[1024px] mx-auto">
+          <div v-for="logo in organitza" :key="logo.id" class="logo-card-large">
+            <a v-if="logo.url" :href="logo.url" target="_blank" rel="noopener noreferrer" class="logo-link">
+              <img
+                :src="logo.path"
+                :alt="logo.alt"
+                :style="{ width: logo.width, height: logo.height }"
+                class="logo-image-large"
+              />
+            </a>
+            <img
+              v-else
+              :src="logo.path"
+              :alt="logo.alt"
+              :style="{ width: logo.width, height: logo.height }"
+              class="logo-image-large"
+            />
+          </div>
+        </div>
+      </div>
+
+            <!-- Sección: Col·laboren -->
       <div class="mb-16">
         <h3 class="text-center text-fire-yellow font-primary text-2xl md:text-3xl mb-8">
-          Organitzadors
+          Col·laboren
         </h3>
-        <div class="flex flex-wrap justify-center items-center gap-8 max-w-5xl mx-auto">
-          <div v-for="org in organitzadors" :key="org.name" class="logo-card-large">
-            <div class="logo-placeholder-large">
-              <p class="font-secondary font-semibold text-center">{{ org.name }}</p>
+        <div class="bg-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+          <div class="flex flex-wrap justify-center gap-6">
+            <div v-for="logo in colaboren" :key="logo.id" class="logo-card logo-card-fixed">
+              <a v-if="logo.url" :href="logo.url" target="_blank" rel="noopener noreferrer" class="logo-link">
+                <img
+                  :src="logo.path"
+                  :alt="logo.alt"
+                  :style="{ width: logo.width, height: logo.height }"
+                  class="logo-image"
+                />
+              </a>
+              <img
+                v-else
+                :src="logo.path"
+                :alt="logo.alt"
+                :style="{ width: logo.width, height: logo.height }"
+                class="logo-image"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Colaboradores institucionales -->
-      <div class="mb-16">
-        <h3 class="text-center text-fire-yellow font-primary text-2xl md:text-3xl mb-8">
-          Col·laboradors Institucionals
+      <!-- Sección: Suport -->
+      <div>
+        <h3 class="text-center text-fire-yellow font-primary text-2xl md:text-3xl mb-2">
+          Donen suport
         </h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <div v-for="col in colaboradors" :key="col.name" class="logo-card">
-            <div class="logo-placeholder">
-              <p class="font-secondary text-sm text-center">{{ col.name }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ayuntamientos -->
-      <div class="mb-16">
-        <h3 class="text-center text-fire-yellow font-primary text-2xl md:text-3xl mb-8">
-          Ajuntaments i Comuns
-        </h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <div v-for="ajuntament in ajuntaments" :key="ajuntament" class="logo-card">
-            <div class="logo-placeholder">
-              <p class="font-secondary text-sm text-center">{{ ajuntament }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Entidades culturales -->
-      <div class="mb-16">
-        <h3 class="text-center text-fire-yellow font-primary text-2xl md:text-3xl mb-8">
-          Entitats Culturals
-        </h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          <div v-for="entitat in entitats" :key="entitat" class="logo-card">
-            <div class="logo-placeholder">
-              <p class="font-secondary text-xs text-center">{{ entitat }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- UNESCO Badge especial -->
-      <div class="max-w-3xl mx-auto mt-16">
-        <div class="unesco-badge">
-          <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-            <div class="unesco-logo-placeholder">
-              <svg class="w-16 h-16 text-fire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
-            </div>
-            <div class="text-center md:text-left">
-              <h4 class="text-fire-gold font-primary text-2xl md:text-3xl mb-2">
-                UNESCO
-              </h4>
-              <p class="text-primary font-secondary">
-                Patrimoni Cultural Immaterial de la Humanitat · 2015
-              </p>
+        <div class="rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
+          <div class="flex flex-wrap justify-center gap-6">
+            <div v-for="logo in suport" :key="logo.id" class="logo-card logo-card-fixed">
+              <a v-if="logo.url" :href="logo.url" target="_blank" rel="noopener noreferrer" class="logo-link">
+                <img
+                  :src="logo.path"
+                  :alt="logo.alt"
+                  :style="{ width: logo.width, height: logo.height }"
+                  class="logo-image"
+                />
+              </a>
+              <img
+                v-else
+                :src="logo.path"
+                :alt="logo.alt"
+                :style="{ width: logo.width, height: logo.height }"
+                class="logo-image"
+              />
             </div>
           </div>
         </div>
@@ -93,44 +98,185 @@
 </template>
 
 <script setup lang="ts">
-const organitzadors = [
-  { name: 'UNESCO' },
-  { name: 'Govern d\'Andorra' },
-  { name: 'Associació de Comunitats Fallaires' }
+// Sección 1: Organitza
+const organitza = [
+  {
+    id: 1,
+    path: '/img/aniversari/01_organitza/01_logo_FallairesVA_negatiu.png',
+    alt: 'Fallaires Valls d\'Andorra',
+    width: '192px',
+    height: '112px',
+    url: 'https://www.fallesandorra.com/10-anys-unesco'
+  },
+  {
+    id: 2,
+    path: '/img/aniversari/01_organitza/02_comu_alv.png',
+    alt: 'Comú d\'Andorra la Vella',
+    width: '192px',
+    height: '112px',
+    url: 'https://andorralavella.ad/'
+  },
+  {
+    id: 3,
+    path: '/img/aniversari/01_organitza/03_logo_assfallairesalv_sf.png',
+    alt: 'Associació Fallaires Andorra la Vella',
+    width: '145px',
+    height: '85px',
+    url: 'https://www.fallairesandorralavella.com/'
+  },
+  {
+    id: 4,
+    path: '/img/aniversari/01_organitza/04_logo_assordino_n.png',
+    alt: 'Associació Ordino',
+    width: '192px',
+    height: '112px',
+    url: 'https://culturapopularordino.ad/'
+  },
+  {
+    id: 5,
+    path: '/img/aniversari/01_organitza/05_uptee.png',
+    alt: 'UPTEE',
+    width: '192px',
+    height: '112px',
+    url: 'https://www.unioproturisme.com/'
+  }
 ]
 
-const colaboradors = [
-  { name: 'Ministeri de Cultura' },
-  { name: 'Departament de Patrimoni' },
-  { name: 'Institut d\'Estudis Andorrans' },
-  { name: 'Consell General' },
-  { name: 'Andorra Turisme' },
-  { name: 'Museu Etnogràfic' },
-  { name: 'Fundació Julià Reig' },
-  { name: 'Centre Cultural' }
+// Sección 2: Col·laboren (Esbarts i entitats)
+const colaboren = [
+  {
+    id: 1,
+    path: '/img/aniversari/03_colaboren/01_esbart_vdn.png',
+    alt: 'Esbart Valls del Nord',
+    width: '160px',
+    height: '80px',
+    url: 'https://www.esbartvallsdelnord.com/'
+  },
+  {
+    id: 2,
+    path: '/img/aniversari/03_colaboren/02_esbart_alv.jpg',
+    alt: 'Esbart Valls del Nord',
+    width: '160px',
+    height: '80px',
+    url: 'https://www.instagram.com/esbartandorra/'
+  },
+  {
+    id: 3,
+    path: '/img/aniversari/03_colaboren/03_esbart_sjl.jpg',
+    alt: 'Esbart Laurèdia',
+    width: '120px',
+    height: '70px',
+    url: 'https://www.esbartlauredia.com/'
+  },
+  {
+    id: 4,
+    path: '/img/aniversari/03_colaboren/06_efolk.jpg',
+    alt: 'Escola Folk del Pirineu',
+    width: '160px',
+    height: '80px',
+    url: 'https://escolafolkdelpirineu.tradicionarius.cat/'
+  },
+  {
+    id: 5,
+    path: '/img/aniversari/03_colaboren/07_ggegantera.jpg',
+    alt: 'Gresca Gegantera d\'Andorra la Vella',
+    width: '160px',
+    height: '80px',
+    url: 'https://www.instagram.com/gegantsandorralavella/'
+  },
+  {
+    id: 6,
+    path: '/img/aniversari/03_colaboren/09_orfeo.jpeg',
+    alt: 'Orfeo Andorrà',
+    width: '160px',
+    height: '80px',
+    url: 'https://associacions.andorralavella.ad/orfeoandorra'
+  },
+  {
+    id: 7,
+    path: '/img/aniversari/03_colaboren/08_rebost.png',
+    alt: 'El Rebost del Padrí',
+    width: '160px',
+    height: '80px',
+    url: 'https://www.rebostdelpadri.com/'
+  }
 ]
 
-const ajuntaments = [
-  'Comú de Sant Julià',
-  'Comú d\'Andorra la Vella',
-  'Comú d\'Escaldes-Engordany',
-  'Comú d\'Encamp',
-  'Comú de La Massana',
-  'Comú d\'Ordino',
-  'Comú de Canillo'
-]
 
-const entitats = [
-  'Grup de Fallaires de Sant Julià',
-  'Agrupació Fallaire d\'Encamp',
-  'Fallaires de La Massana',
-  'Col·lectiu Faller d\'Ordino',
-  'Associació de Falles de Canillo',
-  'Fallaires d\'Escaldes',
-  'Grup de Cultura Popular',
-  'Esbart Laurèdia',
-  'Centre Folklòric Andorrà',
-  'Fundació del Patrimoni'
+// Sección 3: Suport (Comuns)
+const suport = [
+  {
+    id: 1,
+    path: '/img/aniversari/02_suport/01_govern.webp',
+    alt: 'Govern d\'Andorra',
+    width: '300px',
+    height: '150px',
+    url: 'https://www.govern.ad/'
+  },
+  {
+    id: 2,
+    path: '/img/aniversari/02_suport/01_patrimoni.webp',
+    alt: 'Patrimoni Cultural del Govern d\'Andorra',
+    width: '210px',
+    height: '125px',
+    url: 'https://www.govern.ad/ca/tematiques/cultura-i-esports/patrimoni-cultural'
+  },
+  {
+    id: 3,
+    path: '/img/aniversari/02_suport/02_comu_canillo.webp',
+    alt: 'Comú de Canillo',
+    width: '160px',
+    height: '80px',
+    url: 'https://www.canillo.ad/'
+  },
+  {
+    id: 4,
+    path: '/img/aniversari/02_suport/03_comu_encamp.png',
+    alt: 'Comú d\'Encamp',
+    width: '210px',
+    height: '125px',
+    url: 'https://www.comuencamp.ad/'
+  },
+  {
+    id: 5,
+    path: '/img/aniversari/02_suport/04_comu_ordino.png',
+    alt: 'Comú d\'Ordino',
+    width: '210px',
+    height: '125px',
+    url: 'https://ordino.ad/'
+  },
+  {
+    id: 6,
+    path: '/img/aniversari/02_suport/05_comu_mass.png',
+    alt: 'Comú de La Massana',
+    width: '160px',
+    height: '80px',
+    url: 'https://www.lamassana.ad/'
+  },
+  {
+    id: 7,
+    path: '/img/aniversari/02_suport/06_comu_alv.png',
+    alt: 'Comú d\'Andorra la Vella',
+    width: '250px',
+    height: '149px',
+    url: 'https://andorralavella.ad/'
+  },
+  {
+    id: 8,
+    path: '/img/aniversari/02_suport/06_comu_sjl.png',
+    alt: 'Comú de Sant Julià de Lòria',
+    width: '210px',
+    height: '125px',
+    url: 'https://comusantjulia.ad/'
+  },
+  {
+    id: 9,
+    path: '/img/aniversari/02_suport/07_comu_ee.png',
+    alt: 'Comú d\'Escaldes-Engordany',
+    width: '160px',
+    height: '80px',
+    url: 'https://www.e-e.ad/'
+  }
 ]
 </script>
 
@@ -144,33 +290,36 @@ const entitats = [
 
 .logo-card-large {
   @apply transition-all duration-300;
-  @apply hover:scale-105;
+  @apply hover:scale-110;
+  @apply flex items-center justify-center;
 }
 
-.logo-placeholder-large {
-  @apply bg-primary/90 backdrop-blur-sm rounded-lg;
-  @apply w-64 h-32;
-  @apply flex items-center justify-center;
-  @apply border-2 border-fire-orange/30;
+.logo-image-large {
+  @apply object-contain;
   @apply transition-all duration-300;
-  @apply hover:border-fire-orange hover:shadow-lg hover:shadow-fire-orange/30;
-  @apply text-secondary;
+  @apply hover:opacity-80;
 }
 
 .logo-card {
   @apply transition-all duration-300;
-  @apply hover:scale-105;
+  @apply hover:scale-110;
+  @apply flex items-center justify-center;
 }
 
-.logo-placeholder {
-  @apply bg-primary/80 backdrop-blur-sm rounded-lg;
-  @apply w-full h-24;
-  @apply flex items-center justify-center;
-  @apply border border-fire-orange/20;
+.logo-card-fixed {
+  @apply w-40;
+}
+
+.logo-link {
+  @apply block;
   @apply transition-all duration-300;
-  @apply hover:border-fire-orange/50 hover:shadow-md hover:shadow-fire-orange/20;
-  @apply p-4;
-  @apply text-secondary;
+  @apply cursor-pointer;
+}
+
+.logo-image {
+  @apply object-contain;
+  @apply transition-all duration-300;
+  @apply hover:opacity-80;
 }
 
 .unesco-badge {
@@ -193,6 +342,19 @@ const entitats = [
   animation: rotate 20s linear infinite;
 }
 
+.unesco-logo-container {
+  @apply relative z-10;
+  @apply w-24 h-24 rounded-full;
+  @apply bg-white;
+  @apply flex items-center justify-center;
+  @apply shadow-xl shadow-fire-orange/50;
+  @apply p-2;
+}
+
+.unesco-logo-image {
+  @apply w-full h-full object-contain;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -200,13 +362,5 @@ const entitats = [
   to {
     transform: rotate(360deg);
   }
-}
-
-.unesco-logo-placeholder {
-  @apply relative z-10;
-  @apply w-24 h-24 rounded-full;
-  @apply bg-gradient-to-br from-fire-orange to-fire-red;
-  @apply flex items-center justify-center;
-  @apply shadow-xl shadow-fire-orange/50;
 }
 </style>

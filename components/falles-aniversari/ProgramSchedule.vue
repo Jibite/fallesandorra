@@ -24,7 +24,7 @@
           <button
             @click="activeDay = 'day2'"
             :class="[
-              'tab-button',,
+              'tab-button',
               activeDay === 'day2' ? 'tab-button-active' : 'tab-button-inactive'
             ]"
           >
@@ -36,8 +36,8 @@
       <!-- Timeline del día 1 -->
       <div v-show="activeDay === 'day1'" class="timeline-container">
         <div class="timeline">
-          <!-- Actividad 1 -->
-          <div class="timeline-item" v-for="(activity, index) in day1Activities" :key="index">
+          <!-- Solo actividades activas -->
+          <div class="timeline-item" v-for="(activity, index) in activeDay1Activities" :key="index">
             <div class="timeline-marker">
               <div class="timeline-icon">
                 <component :is="activity.icon" />
@@ -62,7 +62,8 @@
       <!-- Timeline del día 2 -->
       <div v-show="activeDay === 'day2'" class="timeline-container">
         <div class="timeline">
-          <div class="timeline-item" v-for="(activity, index) in day2Activities" :key="index">
+          <!-- Solo actividades activas -->
+          <div class="timeline-item" v-for="(activity, index) in activeDay2Activities" :key="index">
             <div class="timeline-marker">
               <div class="timeline-icon">
                 <component :is="activity.icon" />
@@ -88,9 +89,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, h } from 'vue'
+import { ref, h, computed } from 'vue'
 
 const activeDay = ref('day1')
+
+// Computed properties que filtren només les activitats actives
+const activeDay1Activities = computed(() => {
+  return day1Activities.filter(activity => activity.active)
+})
+
+const activeDay2Activities = computed(() => {
+  return day2Activities.filter(activity => activity.active)
+})
 
 // Iconos SVG como componentes funcionales
 const FireIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -98,12 +108,14 @@ const FireIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'curre
   h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z' })
 ])
 
-const BookIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' })
+// Icono de taller (herramientas/construcción)
+const WorkshopIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
+  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z' })
 ])
 
-const FilmIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z' })
+// Icono de música i dansa
+const MusicDanceIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
+  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3' })
 ])
 
 const MusicIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -114,8 +126,9 @@ const UsersIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'curr
   h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' })
 ])
 
-const LightbulbIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' })
+// Icono de conferència/presentació
+const PresentationIcon = () => h('svg', { class: 'w-6 h-6', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
+  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z' })
 ])
 
 const day1Activities = [
@@ -123,29 +136,33 @@ const day1Activities = [
     time: '10:00',
     title: 'Esmorzar fallaires Valls d\'Andorra',
     description: 'Tots els col·lectius fallaires es retroben per compartir un matí de germanor com a inici de les celebracions.',
-    location: 'Plaça XXX, Escaldes Engordany',
-    icon: FireIcon
+    location: 'Carrer dels Veedors, Prat del Roure, Escaldes Engordany',
+    icon: FireIcon,
+    active: false
   },
   {
     time: '11:00',
     title: 'Taller de falles conjunt',
     description: 'Els col·lectius fallaires de les Valls d\'Andorra elaboraran les falles que simbolitzen la unió i la tradició compartida al país.',
-    location: 'Centre Cultural',
-    icon: BookIcon
+    location: 'Carrer dels Veedors, Prat del Roure, Escaldes Engordany',
+    icon: WorkshopIcon,
+    active: true
   },
   {
-    time: '17:00',
+    time: '17:30',
     title: 'Conferència',
-    description: '"Títol conferència" a càrrec de la Mireia Guil.',
+    description: '"L’interès de la UNESCO pel Patrimoni Cultural Immaterial" a càrrec de la Mireia Guil.',
     location: 'Centre Cultural La Llacuna, Andorra la Vella.',
-    icon: UsersIcon
+    icon: PresentationIcon,
+    active: true
   },
   {
-    time: '18:00',
+    time: '18:30',
     title: 'Taula Rodona',
-    description: 'Amb la participació de representants dels col·lectius fallaires andorrans i de la resta dels Pirineus, així com representants del Patrimoni Cultural.',
+    description: 'Amb la participació de representants fallaires i del món del patrimoni cultural.',
     location: 'Centre Cultural La Llacuna, Andorra la Vella.',
-    icon: FilmIcon
+    icon: UsersIcon,
+    active: true
   }
 ]
 
@@ -153,51 +170,66 @@ const day2Activities = [
   {
     time: '17:00',
     title: 'Celebrem-ho amb mùsica i dansa!',
-    description: 'Amb la participació dels Esbarts dansaires i grups de música tradicional que acompanyen les falles durant la celebració de les diferents Cremades de Falles',
+    description: 'Amb la participació dels Esbarts dansaires i músics que ens acompanyen any rere any durant la celebració de les diferents Cremades de Falles al Principat d\'Andorra.',
     location: 'Plaça Major',
-    icon: UsersIcon
+    icon: MusicDanceIcon,
+    active: true
   },
   {
     time: '18:30',
     title: 'Caldo i xocolata calenta!',
     description: 'Amb la col·laboració dels Escudellaires d\'Andorra la Vella i la Gresca Gegantera d\'Andorra la Vella.',
-    location: 'PLaça Guillemó, Andorra la Vella',
-    icon: FilmIcon
+    location: 'Plaça Guillemó, Andorra la Vella',
+    icon: MusicDanceIcon,
+    active: false
   },
   {
     time: '19:00',
     title: 'Parlaments',
     description: 'Gran dinar commemoratiu amb plats tradicionals i productes de proximitat.',
     location: 'Restaurant Els Pirineus',
-    icon: UsersIcon
+    icon: UsersIcon,
+    active: true
+  },
+  {
+    time: '19:20',
+    title: 'Actuació de l\'Orfeó Andorrà',
+    description: 'Ens oferiran una cançó per acompanyar-nos en la nostra celebració.',
+    location: 'Plaça Guillemó, Andorra la Vella',
+    icon: MusicDanceIcon,
+    active: true
   },
   {
     time: '19:30',
     title: 'Els Fallaires de llum!',
-    description: 'Els fallaires de llum dels diferents col·lectius rodaran les seves falles de llum units per una tradició compartida.',
-    location: 'PLaça Guillemó, Andorra la Vella',
-    icon: LightbulbIcon
+    description: 'Fallaires de llum de diferents col·lectius rodaran les seves falles units per una tradició compartida.',
+    location: 'Plaça Guillemó, Andorra la Vella',
+    icon: FireIcon,
+    active: true
   },
   {
     time: '20:00',
-    title: 'ELs fallaires de foc!',
-    description: 'Tots els col·lectius fallaires de les Valls d\'Andorra s\'uneixen per celebrar el 10è aniversari amb la cremada conjunta que simbolitza la força de la tradició i la unió entre tots els col·lectius.',
-    location: 'PLaça Guillemó, Andorra la Vella',
-    icon: BookIcon
+    title: 'Cremada de falles!',
+    description: 'Tots els col·lectius fallaires de les Valls d\'Andorra s\'uneixen per celebrar el 10è aniversari amb una cremada conjunta que simbolitza la força de la tradició i els lligams establerts entre tots els col·lectius andorrans.',
+    location: 'Plaça Guillemó, Andorra la Vella',
+    icon: FireIcon,
+    active: true
   },
   {
     time: '20:30',
-    title: 'Fi de festa!',
-    description: 'L\'Orfeo d\'Andorra i el Cor de Rock d\'Encamp oferiran un concert especial per celebrar el 10è aniversari de les Falles d\'Andorra.',
-    location: 'PLaça Guillemó, Andorra la Vella',
-    icon: FireIcon
+    title: 'Cor de Rock d\'Encamp',
+    description: 'El Cor ens acompanyaran un cop més i ens oferiran un repertori de cançons com a fi de festa de la celebració del 10è aniversari de les Falles d\'Andorra.',
+    location: 'Plaça Guillemó, Andorra la Vella',
+    icon: MusicDanceIcon,
+    active: true
   },
   {
     time: '21:30',
     title: 'Fi de festa amb la participació de tots es',
     description: 'Gran ball popular amb música tradicional i contemporània per tancar la celebració del 10è aniversari.',
     location: 'Plaça Major',
-    icon: MusicIcon
+    icon: MusicDanceIcon,
+    active: false
   }
 ]
 </script>

@@ -6,22 +6,14 @@
     <!-- About Section -->
     <FallesAniversariAboutFallesSection />
 
-    <!-- Coming Soon Section - Pàgina temporal per generar expectació -->
-    <FallesAniversariComingSoon />
-
-    <!-- SECCIONS TEMPORALMENT OCULTES - Descomentar quan es vulgui publicar tota la informació -->
-
     <!-- Program Schedule Section -->
-    <!-- <FallesAniversariProgramSchedule /> -->
-
-    <!-- Location Section -->
-    <!-- <FallesAniversariLocationSection /> -->
+    <FallesAniversariProgramSchedule />
 
     <!-- Collaborators Section -->
-    <!-- <FallesAniversariCollaboratorsGrid /> -->
+    <FallesAniversariCollaboratorsGrid />
 
     <!-- Contact Section -->
-    <!-- <FallesAniversariContactSection /> -->
+    <FallesAniversariContactSection />
 
     <!-- Scroll to top button -->
     <button
@@ -55,7 +47,7 @@ useHead({
     // Open Graph
     {
       property: 'og:title',
-      content: '10 anys Falles Patrimoni UNESCO - La celebració més esperada dels Pirineus'
+      content: '10 anys Falles Patrimoni UNESCO!'
     },
     {
       property: 'og:description',
